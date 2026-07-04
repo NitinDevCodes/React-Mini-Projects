@@ -6,3 +6,4 @@ A collection of React projects built while learning React.
 
 - ✅ bgChanger
 - ✅ Password Generator
+- ✅ Currency Convertor
