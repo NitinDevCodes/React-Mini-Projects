@@ -7,3 +7,4 @@ A collection of React projects built while learning React.
 - ✅ [bgChanger](./bgChanger)
 - ✅ [Password Generator](./passwordGenerator)
 - ✅ [Currency Converter](./currencyConvertor)
+- ✅ [React Router](./reactRouter)
