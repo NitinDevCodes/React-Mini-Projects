@@ -8,3 +8,5 @@ A collection of React projects built while learning React.
 - ✅ [Password Generator](./passwordGenerator)
 - ✅ [Currency Converter](./currencyConvertor)
 - ✅ [React Router](./reactRouter)
+- ✅ [Mini Context](./miniContext)
+- ✅ [Theme Switcher](./themeSwitcher)
