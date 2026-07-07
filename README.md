@@ -10,3 +10,4 @@ A collection of React projects built while learning React.
 - ✅ [React Router](./reactRouter)
 - ✅ [Mini Context](./miniContext)
 - ✅ [Theme Switcher](./themeSwitcher)
+- ✅ [Todo](./todocontextlocalstorage)
