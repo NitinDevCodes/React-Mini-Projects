@@ -11,3 +11,4 @@ A collection of React projects built while learning React.
 - ✅ [Mini Context](./miniContext)
 - ✅ [Theme Switcher](./themeSwitcher)
 - ✅ [Todo](./todocontextlocalstorage)
+- ✅ [Redux Toolkit Todo](./reduxToolkitTodo)
