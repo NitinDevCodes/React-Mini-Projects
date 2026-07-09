@@ -12,3 +12,4 @@ A collection of React projects built while learning React.
 - ✅ [Theme Switcher](./themeSwitcher)
 - ✅ [Todo](./todocontextlocalstorage)
 - ✅ [Redux Toolkit Todo](./reduxToolkitTodo)
+- ✅ [Appwrite Blog WebApp](./Appwrite-Blog)
