@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
+import { useSelector } from "react-redux";
 
 function Home() {
     const [posts, setPosts] = useState([]);
+    const authStatus = useSelector((state) => state.auth.status);
 
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
@@ -47,17 +49,17 @@ function Home() {
                         <div className="flex justify-center gap-5 mt-12">
 
                             <Link
-                                to="/add-post"
+                                to={authStatus ? "/add-post" : "/signup"}
                                 className="px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg duration-300 hover:scale-105"
                             >
-                                ✍ Start Writing
+                                {authStatus ? "✍ Start Writing" : "🚀 Get Started"}
                             </Link>
 
                             <Link
                                 to="/all-posts"
                                 className="px-8 py-4 rounded-xl border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white duration-300"
                             >
-                                📚 Explore Posts
+                                📚 Explore Stories
                             </Link>
 
                         </div>

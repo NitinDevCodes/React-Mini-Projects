@@ -1,5 +1,6 @@
 import React from 'react'
 import { Signup as SignupComponent } from '../components'
+import toast from "react-hot-toast";
 
 function Signup() {
   return (

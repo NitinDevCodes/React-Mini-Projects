@@ -4,6 +4,7 @@ import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import toast from "react-hot-toast";
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -32,10 +33,17 @@ export default function PostForm({ post }) {
             });
 
             if (dbPost) {
+                toast.success("Story published successfully!");
+
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
+
+            if (!file) {
+                toast.error("Image upload failed.");
+                return;
+            }
 
             if (file) {
                 const fileId = file.$id;
@@ -43,6 +51,8 @@ export default function PostForm({ post }) {
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
+                    toast.success("Story updated successfully! ✨");
+
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
