@@ -23,16 +23,30 @@ function App() {
   }, [])
   
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
-      <div className='w-full block'>
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+
         <Header />
-        <main>
-        TODO:  <Outlet />
+
+        <main className="flex-1">
+            <Outlet />
         </main>
+
         <Footer />
-      </div>
+
     </div>
-  ) : null
+) : (
+    <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+
+            <div className="w-14 h-14 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+
+            <p className="mt-5 text-gray-500 text-lg">
+                Loading...
+            </p>
+
+        </div>
+    </div>
+);
 }
 
 export default App

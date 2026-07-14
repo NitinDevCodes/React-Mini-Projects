@@ -1,46 +1,74 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
-import {Container, PostCard} from '../components'
+import { Container, PostCard } from "../components";
 
 function Home() {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
             if (posts) {
-                setPosts(posts.documents)
+                setPosts(posts.documents);
             }
-        })
-    }, [])
-  
+        });
+    }, []);
+
     if (posts.length === 0) {
         return (
-            <div className="w-full py-8 mt-4 text-center">
+            <div className="min-h-[70vh] flex items-center">
                 <Container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
-                                Login to read posts
-                            </h1>
+                    <div className="text-center max-w-3xl mx-auto">
+
+                        <h1 className="text-5xl font-extrabold text-gray-900 mb-6">
+                            Welcome to <span className="text-blue-600">Blogify</span>
+                        </h1>
+
+                        <p className="text-lg text-gray-600 leading-8">
+                            Share your thoughts, write beautiful blogs and explore
+                            amazing content from other creators.
+                        </p>
+
+                        <div className="mt-10">
+                            <h2 className="text-2xl font-semibold text-gray-700">
+                                No Posts Yet 🚀
+                            </h2>
+
+                            <p className="text-gray-500 mt-2">
+                                Create your first blog post and start your journey.
+                            </p>
                         </div>
+
                     </div>
                 </Container>
             </div>
-        )
+        );
     }
+
     return (
-        <div className='w-full py-8'>
+        <div className="py-14 bg-gray-50">
+
             <Container>
-                <div className='flex flex-wrap'>
+
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl font-bold">
+                        Latest Posts
+                    </h1>
+
+                    <p className="text-gray-500 mt-3">
+                        Discover stories shared by our community.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {posts.map((post) => (
-                        <div key={post.$id} className='p-2 w-1/4'>
-                            <PostCard {...post} />
-                        </div>
+                        <PostCard key={post.$id} {...post} />
                     ))}
                 </div>
+
             </Container>
+
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;
