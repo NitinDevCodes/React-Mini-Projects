@@ -9,7 +9,7 @@ function PostCard({ $id, title, featuredImage }) {
             <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 hover:-translate-y-2">
 
                 <img
-                    src={appwriteService.getFilePreview(featuredImage)}
+                    src={appwriteService.getFilePreview(featuredImage).toString()}
                     alt={title}
                     className="w-full h-56 object-cover"
                 />

@@ -22,6 +22,7 @@ export class Service{
                 slug,
                 {
                     title,
+                    slug,
                     content,
                     featuredImage,
                     status,
@@ -124,11 +125,11 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
-            fileId
-        )
+    getFilePreview(fileId) {
+    return this.bucket.getFileView(
+        conf.appwriteBucketId,
+        fileId
+    );
     }
 }
 
