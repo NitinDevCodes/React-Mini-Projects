@@ -46,7 +46,7 @@ function Header() {
                         to="/"
                         className="text-2xl font-extrabold text-blue-600 tracking-wide"
                     >
-                        Blogify
+                        InkFlow
                     </Link>
 
                     {/* Navigation */}
